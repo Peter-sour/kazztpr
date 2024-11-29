@@ -1,0 +1,33 @@
+<div class="news-ticker">
+    <div class="ticker-content">
+        <span>Breaking News: New tech advancements in AI are transforming industries. </span>
+        <span>Weather Update: Sunny skies expected tomorrow with a high of 25°C. </span>
+        <span>Sports: Local team wins championship after thrilling final match! </span>
+    </div>
+</div>
+
+<style>
+    .news-ticker {
+        overflow: hidden; /* Menyembunyikan bagian teks yang keluar dari area kontainer */
+        white-space: nowrap; /* Membuat teks tidak terbungkus */
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .ticker-content {
+        display: inline-block;
+        padding-left: 100%; /* Awal animasi dari kanan */
+        animation: ticker 15s linear infinite; /* Animasi berjalan terus-menerus */
+    }
+
+    @keyframes ticker {
+        from {
+            transform: translateX(0); /* Awal posisi di kanan */
+        }
+        to {
+            transform: translateX(-100%); /* Akhir posisi di kiri */
+        }
+    }
+</style>

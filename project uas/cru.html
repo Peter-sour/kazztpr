@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Admin Panel - CRUD Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        #form-container {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        #form-container h2 {
+            margin-top: 0;
+        }
+
+        #form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #form-container input, #form-container select {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manajemen Pengguna (CRUD)</h1>
+    
+    <!-- Tombol Tambah Data -->
+    <button id="addDataBtn"><i class="ph ph-plus-circle"></i>Add new block</button>
+    
+    <!-- Tabel untuk Menampilkan Data -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Tanggal Bergabung</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="data-table">
+            <!-- Data akan diisi secara dinamis di sini -->
+        </tbody>
+    </table>
+    
+    <!-- Form untuk Create dan Update -->
+    <div id="form-container" style="display: none;">
+        <h2 id="form-title">Add new block</h2>
+        <form id="crud-form">
+            <input type="hidden" id="data-id"> <!-- Untuk ID data (Update) -->
+            
+            <label for="name">Nama:</label>
+            <input type="text" id="name" placeholder="Masukkan nama" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Masukkan email" required>
+            
+            <label for="role">Role:</label>
+            <select id="role" required>
+                <option value="Admin">Admin</option>
+                <option value="Editor">Editor</option>
+                <option value="User">User</option>
+            </select>
+            
+            <label for="joinDate">Tanggal Bergabung:</label>
+            <input type="date" id="joinDate" required>
+            
+            <button type="submit">Simpan</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dataTable = document.getElementById('data-table');
+            const formContainer = document.getElementById('form-container');
+            const crudForm = document.getElementById('crud-form');
+            const addDataBtn = document.getElementById('addDataBtn');
+            const formTitle = document.getElementById('form-title');
+            const dataIdInput = document.getElementById('data-id');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const roleInput = document.getElementById('role');
+            const joinDateInput = document.getElementById('joinDate');
+
+            let data = []; // Simulasi data
+
+            // Fetch initial data (Simulasi)
+            function loadData() {
+                data = [
+                    { id: 1, name: 'John Doe', email: 'john@example.com', role: 'Admin', joinDate: '2023-01-10' },
+                    { id: 2, name: 'Jane Smith', email: 'jane@example.com', role: 'Editor', joinDate: '2023-03-15' },
+                    { id: 3, name: 'Jane Smith', email: 'jane@example.com', role: 'Editor', joinDate: '2023-03-15' }
+                ];
+                renderTable();
+            }
+
+            // Render data ke tabel
+            function renderTable() {
+                dataTable.innerHTML = '';
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.id}</td>
+                        <td>${item.name}</td>
+                        <td>${item.email}</td>
+                        <td>${item.role}</td>
+                        <td>${item.joinDate}</td>
+                        <td>
+                            <button onclick="editData(${item.id})">Edit</button>
+                            <button onclick="deleteData(${item.id})">Hapus</button>
+                        </td>
+                    `;
+                    dataTable.appendChild(row);
+                });
+            }
+
+            // Tambah Data
+            addDataBtn.addEventListener('click', () => {
+                formTitle.textContent = 'Add new block';
+                crudForm.reset();
+                dataIdInput.value = '';
+                formContainer.style.display = 'block';
+            });
+
+            // Simpan Data (Create/Update)
+            crudForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const id = dataIdInput.value;
+                const name = nameInput.value;
+                const email = emailInput.value;
+                const role = roleInput.value;
+                const joinDate = joinDateInput.value;
+
+                if (id) {
+                    // Update Data
+                    const item = data.find(d => d.id === parseInt(id));
+                    if (item) {
+                        item.name = name;
+                        item.email = email;
+                        item.role = role;
+                        item.joinDate = joinDate;
+                    }
+                } else {
+                    // Create Data
+                    const newId = data.length ? data[data.length - 1].id + 1 : 1;
+                    data.push({ id: newId, name, email, role, joinDate });
+                }
+
+                renderTable();
+                formContainer.style.display = 'none';
+            });
+
+            // Edit Data
+            window.editData = function (id) {
+                const item = data.find(d => d.id === id);
+                if (item) {
+                    dataIdInput.value = item.id;
+                    nameInput.value = item.name;
+                    emailInput.value = item.email;
+                    roleInput.value = item.role;
+                    joinDateInput.value = item.joinDate;
+                    formTitle.textContent = 'Edit Pengguna';
+                    formContainer.style.display = 'block';
+                }
+            };
+
+            // Hapus Data
+            window.deleteData = function (id) {
+                data = data.filter(d => d.id !== id);
+                renderTable();
+            };
+
+            // Load initial data
+            loadData();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Div dengan Sentuhan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden; /* Menghilangkan scroll browser */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Konten vertikal */
+            height: 200%; /* Tinggi total container = 2 div */
+            scroll-snap-type: y mandatory; /* Snap saat scrolling */
+            overflow-y: scroll; /* Scroll hanya vertikal */
+        }
+
+        .section {
+            scroll-snap-align: start; /* Snap ke awal div */
+            height: 100vh; /* Tinggi setiap div sesuai layar penuh */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #4CAF50; /* Hijau */
+            color: white;
+        }
+
+        .section:nth-child(even) {
+            background-color: #f44336; /* Merah */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">Halaman 1</div>
+        <div class="section">Halaman 2</div>
+    </div>
+</body>
+</html>

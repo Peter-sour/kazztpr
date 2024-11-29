@@ -1,0 +1,30 @@
+.horizontal-scroll {
+    overflow: hidden; /* Menyembunyikan area di luar kontainer */
+    white-space: nowrap; /* Membuat item satu baris horizontal */
+    width: 100%; /* Lebar kontainer */
+}
+
+.scroll-content {
+    display: inline-flex; /* Membuat item tersusun horizontal */
+    animation: scroll 10s linear infinite; /* Animasi otomatis */
+}
+
+.scroll-item {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 150px;
+    margin-right: 10px;
+    background-color: #f4f4f4;
+    text-align: center;
+    line-height: 150px;
+}
+
+/* Definisi animasi scroll */
+@keyframes scroll {
+    from {
+        transform: translateX(0); /* Mulai dari posisi normal */
+    }
+    to {
+        transform: translateX(-100%); /* Menggeser ke kiri sampai akhir */
+    }
+}

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet"type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="admin.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <ul class="menu-dash" id="navmenu">
+        <div class="menu-icon-x" onclick="toggleMenu()">
+            <i class="ph ph-x"></i>
+        </div>
+        <h2>MyPage</h2>
+        <li class="first-menu">MENU</li>
+        <li class="menu">
+            <div class="go-menu">
+            <i class="ph-light ph-house"></i>
+            <a href="#float">
+                <span>home</span>
+            </a>
+            </div>
+        </li>
+        <li class="menu">
+           <div class="go-menu">
+            <i class="ph-light ph-chat"></i>
+            <a href="#dashboard">
+                <span>My blog</span>
+            </a>
+           </div>
+        </li>
+        <li class="menu">
+            <div class="go-menu">
+                <i class="ph-light ph-bell"></i>
+            <a href="#users">
+                <span>Notification</span>
+            </a>
+            </div>
+        </li>
+        <li class="menu">
+            <div class="go-menu">
+                <i class="ph-light ph-notepad"></i>
+            <a href="#">
+                <span>Orders</span>
+            </a>
+            </div>
+        </li>
+        <li class="menu">
+            <div class="go-menu">
+                <i class="ph-light ph-video"></i>
+            <a href="#">
+                <span>Tutorials</span>
+            </a>
+            </div>
+        </li>
+        <li class="menu">
+            <div class="go-menu">
+                <i class="ph-light ph-gear"></i>
+            <a href="#settings">
+                <span>Settings</span>
+            </a>
+            </div>
+        </li>
+        <li class="first-menu">PRIVATE</li>
+        <li class="menu">
+            <div class="go-menu">
+                <i class="ph-light ph-envelope-simple"></i>
+            <a href="mailto:malakulkabirarrabbani@gmail.com">
+                <span>Email</span>
+            </a>
+            </div>
+        </li>
+        <hr>
+        <li class="menu-logout">
+            <div class="logout">
+                <i class="ph-light ph-sign-out"></i>
+            <a href="#">
+                <span id="logout">logout</span>
+            </a>
+            </div>
+        </li>
+    </ul>
+   <div class="float content active" id="float">
+        <div class="up">
+            <div class="responsive">
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <i class="ph ph-list"></i>
+                </div>
+                <h1>Home</h1>
+            </div>
+            <div class="bell">
+                  <a href="#">
+                  <i class="ph-light ph-bell"></i>
+                  </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="left-column">
+                <div class="part-left">
+                    <div class="part">
+                        <div class="account">
+                            <h2>Account</h2>
+                        </div>
+                        <div class="crown">
+                            <a href="#">
+                                <i class="ph-light ph-crown-simple"></i> 
+                                <span>Upgrade to Pro</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="caret">
+                        <a href="#">
+                            <i class="ph-light ph-caret-right" style="font-size: 20px;"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="part-right">
+                    <div class="part-elips">
+                        <div class="part-lineup">
+                            <div class="lineup-icon">
+                                <img class="img-icon"  src="malak.png" alt="">
+                            </div>
+                            <div class="lineup-text">
+                                <h2>Malakul kabir arrabbani</h2>
+                                <p><a href="https://wa.me/6285784703356">https://wa.me/6285784703356</a></p>
+                            </div>
+                        </div>
+                        <div class="part-goup">
+                            <div class="goup-icon">
+                                <i class="ph-light ph-share-network"></i>
+                                <a href="#">
+                                    <span>Share</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-page" style=" margin-top:10px; font-family:'Roboto',sans-serif;font-size:15px; color: #8e8a8a;">
+                    <p>Start create now!</p>
+                </div>
+                <div class="last-page">
+                    <div class="ticker-content">
+                        <div class="ticker-item">
+                            <i class="ph-light ph-link-simple"></i>
+                            <a href="#">
+                                <span>Add Link</span>
+                            </a>
+                        </div>
+                        <div class="ticker-item">
+                            <i class="ph-light ph-folder-plus"></i>
+                            <a href="#">
+                                <span>Add Product</span>
+                            </a>
+                        </div>
+                        <div class="ticker-item">
+                            <i class="ph-light ph-feather"></i>
+                            <a href="#">
+                                <span>Add Blog</span>
+                            </a>
+                        </div>
+                        <div class="ticker-item">
+                            <i class="ph-light ph-graduation-cap"></i>
+                            <a href="#">
+                                <span>Add Course</span>
+                            </a>
+                        </div>
+                        <div class="ticker-item">
+                            <i class="ph-light ph-globe-simple"></i>
+                            <a href="#">
+                                <span>Media Kit</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="note-pay">
+                    <div class="note-picture">
+                        <img src="iconlynk-removebg-preview.png" alt="">
+                    </div>
+                    <div class="note-earn">
+                        <div class="note-eye">
+                            <h3 style="color: #fff; font-weight: 200; font-size: 20px;">Earnings</h3>
+                            <div class="eyes">
+                                <i id="icon" class="ph-light ph-eye" style="font-size: 20px;"></i>
+                            </div>
+                        </div>
+                        <div class="idr">
+                            <h3 id="text" style="color: #fff; font-weight: 200; font-size: 20px;">IDR---.---</h3>
+                        </div>
+                        <script src="tinkercard.js"></script>
+                        <div class="node-page">
+                            <div class="payout">
+                                <h5>Payout Setting Page</h5>
+                            </div>
+                            <div class="plane">
+                                <a href="#" style="text-decoration: none;">
+                                    <i class="ph ph-paper-plane-tilt"></i>
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="payment">
+                    <div class="note-payment">
+                        <h3 style="color: #000; font-weight: 200; font-size: 14px; font-weight: 550;" >PayMe link</h3>
+                    </div>
+                    <div class="copy">
+                        <div class="note-copy">
+                            <a href="http://lynk.id/payme/kazztpro" style="text-decoration: none; color: #29b77d; font-size: 14px;">
+                                http://lynk.id/payme/kazztpro
+                            </a>
+                        </div>
+                        <div class="note-copy">
+                            <a href="#" style="text-decoration: none;">
+                                <i class="ph ph-copy-simple"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grafich">
+            <div class="noto-click">
+                <div class="not-total">
+                    <h3>Total Views & Click</h3>
+                </div>
+                <div class="note-date">
+                    <div class="note-select">   
+                        <input type="date" id="data-input" style="font-size: larger;" required>
+                    </div>
+                </div>
+            </div>
+            <!--untuk bagian diagram-->
+            <div class="grafh" id="myChart"></div>
+            <!--akhir-->
+        </div>
+        <div class="caption-down">
+            <div class="caption">
+                <div class="life-time">
+                    <i class="ph ph-trend-up" style="font-size: 30px;"></i>
+                </div>
+                <div class="note-sales">
+                    <h3 style="font-family: 'Poppins',sans-serif; font-size: 14px; font-weight: 200; color: #a7a1a1;">Lifetime Sales (IDR)</h3>
+                    <p style="font-size: 30px; font-weight: 100; color: #6b6969;">0</p>
+                </div>
+            </div>
+            <div class="caption">
+                <div class="life-time">
+                    <i class="ph ph-rows" style="font-size: 30px;"></i>
+                </div>
+                <div class="note-sales">
+                    <h3 style="font-family: 'Poppins',sans-serif; font-size: 14px; font-weight: 200; color: #a7a1a1;">My Blocks</h3>
+                    <p style="font-size: 30px; font-weight: 100; color: #6b6969;">25</p>
+                </div>
+            </div>
+            <div class="caption">
+                <div class="life-time">
+                    <i class="ph ph-users" style="font-size: 30px;"></i>
+                </div>
+                <div class="note-sales">
+                    <h3 style="font-family: 'Poppins',sans-serif; font-size: 14px; font-weight: 200; color: #a7a1a1;">My products</h3>
+                    <p style="font-size: 30px; font-weight: 100; color: #6b6969;">30</p>
+                </div>
+            </div>
+            <div class="caption">
+                <div class="life-time">
+                    <i class="ph ph-shopping-bag-open" style="font-size: 30px;"></i>
+                </div>
+                <div class="note-sales">
+                    <h3 style="font-family: 'Poppins',sans-serif; font-size: 14px; font-weight: 200; color: #a7a1a1;">Lifetime Orders</h3>
+                    <p style="font-size: 30px; font-weight: 100; color: #6b6969;">0</p>
+                </div>
+            </div>
+        </div>
+   </div>
+   <!--uuntuk percobaan-->
+    <div id="dashboard" class=" blog content">
+        <div class="ups">
+            <div class="responsive">
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <i class="ph ph-list"></i>
+                </div>
+                <h1>My Blog</h1>
+            </div>
+            <div class="bell">
+                  <a href="#">
+                    <i class="ph-light ph-bell"></i>
+                  </a>
+            </div>
+        </div>
+        <div class="note-blo">
+            <div class="not-left">
+                <div class="part-goup-icon">
+                    <div class="note-share" style="color: #a7a1a1; font-weight: 200; font-size: 15px;">
+                        <div class="part-note-center">
+                            <p>My Blogid: </p>
+                            <a href="#" style="text-decoration: none; color: #000; padding-left: 2px;">
+                                https://lynk.id/malakulkabir
+                            </a>
+                        </div>
+                    </div>
+                    <div class="part-note-goup">
+                        <div class="goup-icon-note">
+                            <i class="ph-light ph-share-network"></i>
+                            <a href="#">
+                                <span>Share</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-page">
+                    <div class="note-your">
+                        <h3 style="color: #a7a1a1; font-weight: 600; font-size: 18px;">Your pages</h3>
+                    </div>
+                    <div class="add-note-page">
+                        <div class="page-plus">
+                            <div class="note-plus">
+                                <i class="ph ph-plus" style="padding-right: 2px;"></i>
+                                <a href="#" style="text-decoration: none; color: #29b77d;">
+                                    <span>Pages</span>
+                                </a>
+                            </div>
+                            <div class="note-settting">
+                               <a href="#">
+                                <i class="ph ph-gear" style="font-size: 30px; font-weight: bold; "></i>
+                               </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="node-button-page">
+                    <button class="node-button">Home</button>
+                </div>
+                <!--l-->
+                <div class="part-note-crud">
+                    <button class="add-new" id="addDataBtn"><i class="ph ph-plus-circle" style="padding-right: 5px;"></i>Add new block</button>
+    
+                    <!-- Tabel untuk Menampilkan Data -->
+                    <table>
+                        <thead>
+                            <tr>
+                               <th>ID</th>
+                               <th>Nama</th>
+                               <th>Email</th>
+                               <th>Role</th>
+                               <th>Tanggal Bergabung</th>
+                               <th>aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-table">
+                             <!-- Data akan diisi secara dinamis di sini -->
+                        </tbody>
+                    </table>
+    
+                   <!-- Form untuk Create dan Update -->
+                </div> 
+            </div>
+            <div class="not-right">
+                <div id="form-container" style="display: none;">
+                    <h2 id="form-title">Add new block</h2>
+                    <form id="crud-form">
+                         <input type="hidden" id="data-id"> <!-- Untuk ID data (Update) -->
+        
+                         <label for="name">Nama:</label>
+                         <input type="text" id="name" placeholder="Masukkan nama" required>
+        
+                         <label for="email">Email:</label>
+                         <input type="email" id="email" placeholder="Masukkan email" required>
+        
+                         <label for="role">Role:</label>
+                         <select id="role" required>
+                             <option value="Admin">Admin</option>
+                             <option value="Editor">Editor</option>
+                             <option value="User">User</option>
+                         </select>
+        
+                         <label for="joinDate">Tanggal Bergabung:</label>
+                         <input type="date" id="joinDate" required>
+        
+                         <button type="submit">Simpan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="users" class=" notification content">
+      <div class="note-notif">
+            <div class="responsive">
+                 <div class="menu-icon" onclick="toggleMenu()">
+                    <i class="ph ph-list"></i>
+                 </div>
+                 <h1>Notification</h1>
+            </div>
+            <div class="bell">
+                <a href="#">
+                  <i class="ph-light ph-bell"></i>
+                </a>
+            </div>
+      </div>
+      <div class="part-note-notif">
+         <div class="node-user-notification">
+            <div class="note-user-left">
+                <div class="note-myblog">
+                    <div class="note-myblog-part">
+                        <h3>MyBlogid: </h3>
+                    </div>
+                    <div class="note-part-myblog">
+                        <p>https://lynk.id/malakulkabir</p>
+                    </div>
+                </div>
+                <div class="part-note-goup-notification">
+                    <div class="goup-icon-note">
+                        <i class="ph-light ph-share-network"></i>
+                        <a href="#">
+                            <span>Share</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+      <div class="part-node-notification">
+        <div class="use-notification">
+            <div class="use-part-notification">
+                <div class="use-part-notif">
+                    <h3 style=" font-weight: 600; font-size: 17px;">Notifications</h3>
+                </div>
+            </div>
+            <div class="use-part-noborder">
+                <h3 style="color: #999b9a;  font-weight: 200; font-size: 14px; padding-left: 8px; padding-bottom: 5px;">17 Novermber 2024-11.30</h3>
+                <p style="padding-left: 8px;">[IMPORTANT] Senyumku mahal, makanya sering hemat ekspresi</p>
+            </div>
+            <div class="use-part-noborder">
+                <h3 style=" color: #999b9a;font-weight: 200; font-size: 14px; padding-left: 8px; padding-bottom: 5px;">10 Novermber 2024-15.00</h3>
+                <p style="padding-left: 8px;">[IMPORTANT] kalau bosan jangan berdiam diri di rel nanti ketabrak</p>
+            </div>
+            <div class="use-part-noborder">
+                <h3 style=" color: #999b9a;font-weight: 200; font-size: 14px;padding-left: 8px; padding-bottom: 5px;">24 Novermber 2024-20.45</h3>
+                <p style="padding-left: 8px;">[IMPORTANT] Bukan aku nggak peka, sinyal kamu aja yang lemah</p>
+            </div>
+            <div class="use-part-noborder">
+                <h3 style="color: #999b9a; font-weight: 200; font-size: 14px;padding-left: 8px; padding-bottom: 5px;">16 Novermber 2024-19.50</h3>
+                <p style="padding-left: 8px;">[IMPORTANT] website ini sedang dalam proses pemulihan</p>
+            </div>
+        </div>
+        <div class="node-bigborder-notification">
+            <div class="part-note-click">
+                <p>
+                    <span>Click</span>
+                    <a href="#">notification</a>
+                    <span>view.</span>
+                </p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div id="settings" class=" setting content">
+        <div class="note-notif">
+            <div class="responsive">
+                <div class="menu-icon" onclick="toggleMenu()">
+                   <i class="ph ph-list"></i>
+                </div>
+                <h1>Settings</h1>
+           </div>
+            <div class="bell">
+                <a href="#">
+                  <i class="ph-light ph-bell"></i>
+                </a>
+            </div>
+        </div>
+        <div class="part-note-setting">
+            <div class="part-setting">
+                <div class="part-life-setting">
+                    <i class="ph ph-user"></i>
+                </div>
+                <div class="part-node-caption">
+                    <div class="partchev">
+                        <div class="part-note-partchev">
+                            <p>My Account</p>
+                            <span>Account detail, Blog information, etc.</span>
+                        </div>
+                        <div class="part-node-partchev">
+                            <a href="#">
+                                <i class="ph ph-caret-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part-setting">
+                <div class="part-life-setting">
+                    <i class="ph ph-paper-plane-tilt"></i>
+                </div>
+                <div class="part-node-caption">
+                    <div class="partchev">
+                        <div class="part-note-partchev">
+                            <p>Create Method</p>
+                            <span>Create settings, Fee setting, etc</span>
+                        </div>
+                        <div class="part-node-partchev">
+                            <a href="#">
+                                <i class="ph ph-caret-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part-setting">
+                <div class="part-life-setting">
+                    <i class="ph ph-arrow-circle-down"></i>
+                </div>
+                <div class="part-node-caption">
+                    <div class="partchev">
+                        <div class="part-note-partchev">
+                            <p>Payout Setting</p>
+                            <span>Witdraw earning, Bank account, etc</span>
+                        </div>
+                        <div class="part-node-partchev">
+                            <a href="#">
+                                <i class="ph ph-caret-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part-setting">
+                <div class="part-life-setting">
+                    <i class="ph ph-medal"></i>
+                </div>
+                <div class="part-node-caption">
+                    <div class="partchev">
+                        <div class="part-note-partchev">
+                            <p>Advance Settings</p>
+                            <span>Email settings, Goggle analytics, etc</span>
+                        </div>
+                        <div class="part-node-partchev">
+                            <a href="#">
+                                <i class="ph ph-caret-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part-setting">
+                <div class="part-life-setting">
+                    <i class="ph ph-globe"></i>
+                </div>
+                <div class="part-node-caption">
+                    <div class="partchev">
+                        <div class="part-note-partchev">
+                            <p>Site setting</p>
+                            <span>Custom domain, Personalization, etc</span>
+                        </div>
+                        <div class="part-node-partchev">
+                            <a href="#">
+                                <i class="ph ph-caret-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part-setting">
+                <div class="part-life-setting">
+                    <i class="ph ph-calendar-blank"></i>
+                </div>
+                <div class="part-node-caption">
+                    <div class="partchev">
+                        <div class="part-note-partchev">
+                            <p>Sync Calendar</p>
+                            <span>Connect your Goggle Calendar to let us update</span>
+                        </div>
+                        <div class="part-node-partchev">
+                            <a href="#">
+                                <i class="ph ph-caret-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="settings" class=" setting content">
+      <h1>Settings</h1>
+      <p>Adjust system settings here.</p>
+    </div>
+   <!--untuk js-->
+   <script src="admin.js"></script>
+   <script src="crud.js"></script>
+    <script src="proteksi.js"></script>
+   <script>
+    function toggleMenu() {
+    const navmenu = 
+    document.getElementById('navmenu');
+
+    navmenu.classList.toggle('active')
+    }
+   </script>
+   <script src="grap.js"></script>
+    
+</body>
+</html>
