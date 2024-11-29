@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script> <!--ini untuk icon-->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <link rel="stylesheet" href="pribadi.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="180x180">
+    <title>Website Pribadi</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="name">
+                <div class="first">my</div>
+                <div class="second">page</div>
+                <div class="login">
+                    <span>login/daftar</span>
+                    <div class="dropdown-content">
+                         <a href="login.html" target="_self">login</a>
+                         <a href="#">daftar</a>
+                     </div>
+                 </div>
+            </div>
+            <ul class="nav" id="navmenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#">portofolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">
+               <i class="ph ph-list"></i>
+            </div>
+        </div>
+    </div>
+    <div id="home"></div>
+    <div class="dash">
+        <!-- ini content dashboard -->
+        <div class="note-forum">
+            <h1 class="note-busy"><span class="now">hello i am </span>
+                <br><span class="past">
+               front-end developer
+               <br></span>
+               <span class="neo-tense">
+                Politeknik Elektronika Negeri Surabaya
+               </span><br>
+               <span class="future">
+                malakul kabir arrabbani
+               </span><br>
+            <span class="future">
+                d3 teknik informatika
+            </span></h1>
+            <div class="node-foto">
+              <img src="cropmalak-removebg.png" alt=""
+              width="200px" height="250px">
+             </div>
+       </div>
+    </div>
+    <div class="donate">
+        <a href="http://lynk.id/payme/kazztpro" target="blank">
+            buy me a coffe &#128517;
+        </a>
+    </div>
+    <br>
+    <div class="blog" id="blog">
+        <div class="sekilas">
+            <h1>front end developer</h1>
+            <h3>apa saja yang saya pelajari untuk menjadi seorang front end development</h3>
+        </div>
+        <br>
+        <div class="row">
+            <div class="column">
+                <img src="html-removebg-preview.png" alt="">
+                <p>HTML (HyperText Markup Language) adalah bahasa markup yang digunakan untuk membuat struktur dasar sebuah halaman web.
+                     HTML menggunakan tag untuk mengatur elemen seperti teks, gambar, tautan, dan lainnya agar dapat ditampilkan oleh browser.</p>
+            </div>
+            <div class="column">
+                <img src="css-removebg-preview.png" alt="">
+                <p>CSS (Cascading Style Sheets) adalah bahasa yang digunakan untuk mengatur tampilan dan tata letak elemen-elemen HTML. 
+                    CSS memungkinkan Anda mengubah warna, ukuran, jarak, dan tata letak halaman agar terlihat lebih menarik dan responsif di berbagai perangkat.</p>
+            </div>
+            <div class="column">
+                <img src="javascript-removebg-preview.png" alt="">
+                <p>JavaScript adalah bahasa pemrograman yang berjalan di sisi klien (client-side) dan digunakan untuk menambah interaktivitas pada halaman web.
+                     Dengan JavaScript, Anda bisa membuat elemen-elemen di halaman web lebih dinamis, seperti animasi, validasi formulir, dan lainnya.</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="column">
+            <img src="bosstrap-removebg-preview.png" alt="">
+            <p>Bootstrap adalah framework CSS yang membantu dalam pengembangan desain web yang responsif. Dengan Bootstrap, Anda dapat 
+                dengan cepat membuat tata letak yang konsisten menggunakan komponen dan gaya yang sudah disediakan, seperti tombol, navbar, grid, dan lainnya.</p>
+        </div>
+        <div class="column">
+            <img src="github-removebg-preview.png" alt="">
+            <p>Git adalah sistem kontrol versi yang digunakan untuk melacak perubahan pada kode. Git memungkinkan pengembang untuk berkolaborasi dalam proyek,
+                 menyimpan versi kode, dan mengatur berbagai perubahan agar pengembangan lebih terstruktur dan aman.</p>
+        </div>
+        <div class="column">
+            <img src="th-removebg-preview.png" alt="">
+            <p>React JS adalah pustaka JavaScript yang digunakan untuk membangun antarmuka pengguna interaktif.
+                 Dengan pendekatan berbasis komponen dan Virtual DOM, React mempermudah pengembangan aplikasi web cepat dan efisien.</p>
+        </div>
+    </div>
+    <br>
+    <div class="media" id="contact">
+        <p>social media</p>
+    </div>
+    <div class="social-media">
+        <a href="https://wa.me/6285784703356" target="_blank"><img src="wa-removebg-preview.png" alt=""></a>
+        <a href="https://x.com/KabirMalak80126?t=hgxjdJcndWAJ_PFJdFLNKQ&s=09" target="_blank"><img src="twt-removebg-preview.png" alt=""></a>
+        <a href="https://www.instagram.com/peterpanx_23/profilecard/?igsh=anZybGZpcjlyand5" target="_blank"><img src="ig-removebg-preview.png" alt=""></a>
+        <a href="https://x.com/KabirMalak80126?t=hgxjdJcndWAJ_PFJdFLNKQ&s=09" target="_blank"><img src="tiktok-removebg-preview.png" alt=""></a>
+    </div>
+    <div class="footer" id="about">
+        <div class="foot">
+            <p>tentang saya</p>
+            <h4>Nama saya Malakul kabir arrabbani dari prodi D3 Teknik Informatika PENS PSDKU la NRP 3124521031
+                angkatan 2024. ketertarikan saya sebenarnya bukan dari web development, tapi saya 
+                tertarik pada bidang cyber security.tapi saya sadar menjadi seorang cybersecurity specialist
+                juga tidak terlepas dari web development.
+            </h4>
+        </div>
+        <div class="foot">
+            <p>kontak saya</p>
+            <h4>Alamat : Langgar awan putih Rt.013/Rw.007 Dsn.kambingan 
+                Ds.Ngusikan Kec.ngusikan Kab.Jombang Prov.jawa Timur </h4>
+            <h4>Email : malakulkabirarrabbani@gmail.com</h4>
+            <h4>Email PENS : malak@it.student.pens.ac.id</h4>
+            <h4>Tlp -sms/wa : 085784703356</h4>
+        </div>
+        <div class="foot">
+            <p>pendidikan</p>
+            <h4>saya seorang mahasiswa Politeknik Elektronika Negeri Surabaya angkatan 2024.
+                saya lulus SMA pada tahun 2024 pada umur 15 tahun. Saya menempuh pendidikan kelas 1 SD
+                pada umur 3 tahun.
+            </h4>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+    const navmenu = 
+    document.getElementById('navmenu');
+
+    navmenu.classList.toggle('active')
+    }
+    </script>
+</body>
+</html>

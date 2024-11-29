@@ -1,0 +1,225 @@
+*,html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #2c3e50, #34495e);
+}
+.wrapper{
+    position: relative;
+    width: 700px;
+    height: 400px;
+    background:transparent;
+    border: 2px solid #0ef;
+    overflow: hidden;
+    animation: fadeIn 3s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-300px); }
+    to { opacity: 1; transform: translateY(0px); }
+}
+.wrapper .form-box{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+}
+.wrapper .form-box{
+    left: 0;
+    padding: 0 30px;
+}
+.form-box h2{
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin:25px 0;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    padding-right: 23px;
+    transition: .5s;
+}
+.input-box input:focus,
+.input-box input:valid{
+    border-bottom-color: #0ef ;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    color: #0ef;
+    top: -5px;
+}
+.input-box i{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 18px;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~i,
+.input-box input:valid~i{
+    color: #0ef;
+}
+.btn{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid #0ef;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background: linear-gradient(#081b29,#0ef,#081b29,#0ef);
+    z-index: -1;
+    transition: .5s ;
+}
+
+.btn:hover::before{
+    top: 0;
+}
+.reg-link{
+    font-size: 14.5px;
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+}
+.reg-link p a{
+    color: #0ef;
+    text-decoration: none;
+    font-weight: 600;
+}
+.info-text{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+.wrapper .info-text{
+    right: 0;
+    text-align: right;
+    padding: 0 40px 60px 150px ;
+}
+.wrapper .info-text h2{
+    font-size: 32px;
+    color: #fff;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+.info-text p{
+    font-size: 20px;
+    color: #fff;
+}
+.wrapper .animate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 850px;
+    height: 500px;
+    background: linear-gradient(45deg , #081b29,#0ef);
+    border-bottom: 3px solid #0ef;
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+}
+@media (max-width: 768px) {
+    form{
+        padding: 15px;
+    }
+    form .input-box{
+        font-size: 1.5em;
+    }
+    form .reg-link{
+        font-size: 1em;
+    }
+    form .btn{
+        font-size: 14px;
+        padding: 10px;
+    }
+    .form-box .info-text{
+        padding: 0 20px 40px 10px ;
+    }
+    
+}
+@media (max-width: 480px) {
+    form{
+        padding: 15px;
+    }
+    form .input-box label{
+        font-size: 15px;
+    }
+    form .reg-link{
+        width: 140%;
+        transform: translateX(-23px);
+        font-size: 14px;
+    }
+    .btn{
+        width: 100%;
+        height: 15%;
+    }
+    .wrapper .info-text{
+        width: 50%;
+        height: 100%;    
+        padding: 0 20px 50px 0px ;
+
+    }
+    .input-box{
+        width: 100%;
+    }
+    .modal{
+        width: 100%;
+        height: 100%;
+    }
+}
+/*transparan saat input field*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    background-color: transparent !important; /* Sesuaikan dengan tema */
+    color: #ffffff !important;
+    transition: background-color 5000s ease-in-out 0s;
+}

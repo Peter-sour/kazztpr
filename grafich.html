@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Clicks Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2>Grafik Total Clicks</h2>
+    
+    <label for="start-date">Tanggal Mulai:</label>
+    <input type="date" id="start-date" />
+    <label for="end-date">Tanggal Akhir:</label>
+    <input type="date" id="end-date" />
+    <button id="filter-data">Tampilkan Total Clicks</button>
+    <br><br>
+
+    <label for="add-date">Tambah Tanggal:</label>
+    <input type="date" id="add-date" />
+    <label for="add-clicks">Jumlah Clicks:</label>
+    <input type="number" id="add-clicks" min="1" />
+    <button id="add-click">Tambah Click</button>
+    <button id="delete-graph">Hapus Grafik</button>
+    
+    <canvas id="clickChart" width="400" height="200"></canvas>
+
+    <script>
+        // Data Dummy Clicks (Total Clicks per Tanggal)
+        let clickData = {
+            '2024-10-26': 5,
+            '2024-10-27': 8,
+            '2024-10-28': 2,
+            '2024-10-29': 6,
+            '2024-11-11': 10,
+            '2024-11-16': 3
+        };
+
+        // Fungsi Membuat Grafik
+        let clickChart;
+        function createChart() {
+            const ctx = document.getElementById('clickChart').getContext('2d');
+            clickChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(clickData),
+                    datasets: [{
+                        label: 'Total Clicks',
+                        data: Object.values(clickData),
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Inisialisasi Grafik Awal
+        createChart();
+
+        // Fungsi untuk Menampilkan Data Berdasarkan Rentang Tanggal
+        function filterClicks() {
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+
+            if (startDate && endDate) {
+                const filteredLabels = [];
+                const filteredData = [];
+
+                // Filter Data Berdasarkan Rentang Tanggal
+                Object.keys(clickData).forEach(date => {
+                    if (date >= startDate && date <= endDate) {
+                        filteredLabels.push(date);
+                        filteredData.push(clickData[date]);
+                    }
+                });
+
+                // Update Data Chart
+                clickChart.data.labels = filteredLabels;
+                clickChart.data.datasets[0].data = filteredData;
+                clickChart.update();
+            } else {
+                alert('Pilih rentang tanggal terlebih dahulu!');
+            }
+        }
+
+        // Fungsi untuk Menambah Click
+        function addClick() {
+            const addDate = document.getElementById('add-date').value;
+            const addClicks = parseInt(document.getElementById('add-clicks').value);
+
+            if (addDate && addClicks > 0) {
+                if (clickData[addDate]) {
+                    clickData[addDate] += addClicks;
+                } else {
+                    clickData[addDate] = addClicks;
+                }
+
+                // Update Grafik Setelah Data Ditambah
+                clickChart.data.labels = Object.keys(clickData);
+                clickChart.data.datasets[0].data = Object.values(clickData);
+                clickChart.update();
+                alert('Clicks berhasil ditambahkan!');
+            } else {
+                alert('Isi tanggal dan jumlah clicks dengan benar!');
+            }
+        }
+
+        // Fungsi untuk Menghapus Grafik
+        function deleteGraph() {
+            clickChart.destroy();
+            alert('Grafik telah dihapus!');
+        }
+
+        // Event Listener
+        document.getElementById('filter-data').addEventListener('click', filterClicks);
+        document.getElementById('add-click').addEventListener('click', addClick);
+        document.getElementById('delete-graph').addEventListener('click', deleteGraph);
+    </script>
+</body>
+</html>
